@@ -1,4 +1,4 @@
 language: swift
 script:
-  xctool -workspace TravisTesting.xcworkspace -scheme TravisTesting -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-  xctool test -workspace TravisTesting.xcworkspace -scheme TravisTestingTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xctool -workspace TravisTesting.xcworkspace -scheme TravisTesting -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xctool test -workspace TravisTesting.xcworkspace -scheme TravisTestingTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
