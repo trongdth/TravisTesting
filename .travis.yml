@@ -2,5 +2,5 @@ language: swift
 before script:
 - pod install
 script:
-- xcodebuild -workspace TravisTesting.xcworkspace -scheme TravisTesting -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-- xcodebuild test -workspace TravisTesting.xcworkspace -scheme TravisTestingTests -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xcodebuild -workspace TravisTesting/TravisTesting.xcworkspace -scheme TravisTesting -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xcodebuild test -workspace TravisTesting/TravisTesting.xcworkspace -scheme TravisTestingTests -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
