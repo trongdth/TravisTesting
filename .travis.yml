@@ -1,17 +1,22 @@
 language: swift
-cache: cocoapods
+cache:
+  bundler: true
+  cocoapods: true
+  edge: true
 rvm: 2.2.2
 osx_image: xcode8
 before install:
-- gem install cocoapods -v 1.2.0.rc.1
+  - gem install cocoapods -v 1.2.0.rc.1
+  - gem install xcpretty
 before script:
-- pod install
+  - pod install
 script:
-- xcodebuild -workspace TravisTesting/TravisTesting.xcworkspace -scheme TravisTesting
-  -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-- xcodebuild test -workspace TravisTesting/TravisTesting.xcworkspace -scheme TravisTestingTests
-  -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3' -sdk iphonesimulator
-  ONLY_ACTIVE_ARCH=NO
+  - xcodebuild -workspace TravisTesting/TravisTesting.xcworkspace -scheme TravisTesting -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+  - xcodebuild test -workspace TravisTesting/TravisTesting.xcworkspace -scheme TravisTestingTests -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+
 env:
   global:
-    secure: z5lc1aGNcsgFYRCWffHcBHr31/ZC25H61Zi7WFmjUi7bFHqVKKfeL1VNxpDQaB2JvJAKEuQHGvNeVsuYC/02XJEfGY3wpb35vDAyVmXEEjkryWMVcdKD7bVWHJ5PWKsrALIsm5iYa9+e2SbI75ypUAmvmpqeOO2JGumXAfC9pXBMM+1hjzODmae1f/KR+XVaZWEMkL2viWyM+SJM6graVgBwOZaY9TqmQ21HBxE89XDBgA3VM5gx6gSp1GeaJUM0ik/Aea+rHKMp35puZyrm0ZaKD4On7GoLRvg66RKgWino8rPxbhdocqOr/ZD0BOv6lUjcQCeCPr4oxWm476b2udsgrUKNdqZM02GtZ7SjkdzR9k0MmfLn9vQo4LDYtO9EEvBIJt0G+qwNXCnd5MBmbs0ENJzW367PE1/8rnwzvcvfpEW+waiNUc2HAqAZLkyCtxK07FUG/v2bIW+KxnhJIiAW59FrUcgUk3A19po5jyr81mznR+a6cQT3dz5IA5OJzk7tLx4jFLHh+0VAF4ws0ylGCP9lYv3tq4FFWTP0E5BG+jXpE5ai48Ug5z8qqa5tZPO6BFJSX0TfOdQpXeDrYCOhuUKoLX2py+CWU/QtL1F3YoadeMRLodsIVMPzq4oppv9eC9wCmUNBuHSXxPpBmFCGntzjuBqY3LXGLeeCpek=
+  - secure: z5lc1aGNcsgFYRCWffHcBHr31/ZC25H61Zi7WFmjUi7bFHqVKKfeL1VNxpDQaB2JvJAKEuQHGvNeVsuYC/02XJEfGY3wpb35vDAyVmXEEjkryWMVcdKD7bVWHJ5PWKsrALIsm5iYa9+e2SbI75ypUAmvmpqeOO2JGumXAfC9pXBMM+1hjzODmae1f/KR+XVaZWEMkL2viWyM+SJM6graVgBwOZaY9TqmQ21HBxE89XDBgA3VM5gx6gSp1GeaJUM0ik/Aea+rHKMp35puZyrm0ZaKD4On7GoLRvg66RKgWino8rPxbhdocqOr/ZD0BOv6lUjcQCeCPr4oxWm476b2udsgrUKNdqZM02GtZ7SjkdzR9k0MmfLn9vQo4LDYtO9EEvBIJt0G+qwNXCnd5MBmbs0ENJzW367PE1/8rnwzvcvfpEW+waiNUc2HAqAZLkyCtxK07FUG/v2bIW+KxnhJIiAW59FrUcgUk3A19po5jyr81mznR+a6cQT3dz5IA5OJzk7tLx4jFLHh+0VAF4ws0ylGCP9lYv3tq4FFWTP0E5BG+jXpE5ai48Ug5z8qqa5tZPO6BFJSX0TfOdQpXeDrYCOhuUKoLX2py+CWU/QtL1F3YoadeMRLodsIVMPzq4oppv9eC9wCmUNBuHSXxPpBmFCGntzjuBqY3LXGLeeCpek=
+  - APP_NAME="TravisTesting"
+  - 'DEVELOPER_NAME="Phone Distribution: Dinh Trong (J9948BJ3RH)"'
+  - PROFILE_NAME="TravisExample_Ad_Hoc"

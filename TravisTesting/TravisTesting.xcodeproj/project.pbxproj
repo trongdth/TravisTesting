@@ -257,7 +257,7 @@
 					B11639941E5AF52900B36C9C = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = J9948BJ3RH;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					B11639A81E5AF52900B36C9C = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -621,8 +621,10 @@
 				INFOPLIST_FILE = TravisTesting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mroom.TravisTesting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mroom.atmfinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "824e7588-74ce-4378-8607-bd2b18bcbfe6";
+				PROVISIONING_PROFILE_SPECIFIER = "Mroom provisioning profile";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -632,12 +634,15 @@
 			baseConfigurationReference = EFB48605123085C03E2F8F60 /* Pods-TravisTesting.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = J9948BJ3RH;
 				INFOPLIST_FILE = TravisTesting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mroom.TravisTesting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mroom.atmfinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7e060c0b-81e5-46ba-8ec4-206145ddbdbc";
+				PROVISIONING_PROFILE_SPECIFIER = "ATM Finder Adhoc";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
