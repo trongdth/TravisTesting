@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
     
     // MARK:- Selector methods
     
-    @IBAction func btnPingTouched(_ sender: Any) {
+    @IBAction func btnPingTouched(_ sender: UIButton) {
         
     }
 }
