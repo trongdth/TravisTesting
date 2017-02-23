@@ -5,7 +5,8 @@ cache:
   edge: true
 rvm: 2.2.2
 osx_image: xcode8
-before_install:
+podfile: TravisTesting/Podfile
+before install:
   - gem install cocoapods -v 1.2.0.rc.1
   - gem install xcpretty
 before script:
