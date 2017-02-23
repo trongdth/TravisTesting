@@ -5,12 +5,11 @@ cache:
   edge: true
 rvm: 2.2.2
 osx_image: xcode8
-podfile:
-  - TravisTesting/Podfile
 before_install:
   - gem install cocoapods -v 1.2.0.rc.1
   - gem install xcpretty
 before script:
+  - cd TravisTesting
   - pod install
 script:
   - echo $TRAVIS_PULL_REQUEST_BRANCH
