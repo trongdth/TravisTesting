@@ -14,6 +14,7 @@ before script:
   - pod install
 
 script:
+  - chmod 775 script.sh
   - ./script.sh
 
 env:
